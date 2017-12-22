@@ -124,6 +124,9 @@ testScripts = [
     'bip68-112-113-p2p.py',
     'rawtransactions.py',
     'reindex.py',
+    'addressindex.py',
+    'timestampindex.py',
+    'spentindex.py',
     # vv Tests less than 30s vv
     'mempool_resurrect_test.py',
     'txn_doublespend.py --mineblock',

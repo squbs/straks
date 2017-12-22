@@ -278,6 +278,7 @@ static const CRPCCommand vRPCCommands[] =
     { "blockchain",         "getblockcount",          &getblockcount,          true,      false,      false },
     { "blockchain",         "getblock",               &getblock,               true,      false,      false },
     { "blockchain",         "getblockhash",           &getblockhash,           true,      false,      false },
+    { "blockchain",         "getblockhashes",           &getblockhashes,           true,      false,      false },
     { "blockchain",         "getchaintips",           &getchaintips,           true,      false,      false },
     { "blockchain",         "getdifficulty",          &getdifficulty,          true,      false,      false },
     { "blockchain",         "getmempoolinfo",         &getmempoolinfo,         true,      true,       false },
@@ -287,6 +288,7 @@ static const CRPCCommand vRPCCommands[] =
     { "blockchain",         "verifychain",            &verifychain,            true,      false,      false },
     { "blockchain",         "invalidateblock",        &invalidateblock,        true,      true,       false },
     { "blockchain",         "reconsiderblock",        &reconsiderblock,        true,      true,       false },
+    { "blockchain",         "getspentinfo",        &getspentinfo,        false,      false,       false },
 
     /* Mining */
     { "mining",             "getblocktemplate",       &getblocktemplate,       true,      false,      false },
@@ -309,6 +311,13 @@ static const CRPCCommand vRPCCommands[] =
     { "rawtransactions",    "getrawtransaction",      &getrawtransaction,      true,      false,      false },
     { "rawtransactions",    "sendrawtransaction",     &sendrawtransaction,     false,     false,      false },
     { "rawtransactions",    "signrawtransaction",     &signrawtransaction,     false,     false,      false }, /* uses wallet if enabled */
+
+    /* Address index */
+    { "addressindex",       "getaddressmempool",      &getaddressmempool,      true, false, false},
+    { "addressindex",       "getaddressutxos",        &getaddressutxos,        false, false, false },
+    { "addressindex",       "getaddressdeltas",       &getaddressdeltas,       false, false, false },
+    { "addressindex",       "getaddresstxids",        &getaddresstxids,        false, false, false },
+    { "addressindex",       "getaddressbalance",      &getaddressbalance,      false, false, false },
 
     /* Utility functions */
     { "util",               "createmultisig",         &createmultisig,         true,      true ,      false },
